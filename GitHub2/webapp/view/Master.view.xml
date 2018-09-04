@@ -1,0 +1,25 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:semantic="sap.m.semantic"
+	controllerName="GitHubGitHub.controller.Master" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<semantic:MasterPage id="page" title="{i18n>masterTitle}" navButtonPress="onNavBack" showNavButton="true">
+		<semantic:content>
+			<!--To display list Items and bind the data to the list items-->
+			<List class = 'gradientlist' id="List" items="{ path: '/items' }">
+				<headerToolbar>
+					<OverflowToolbar>
+						<!--To display the Search field-->
+						<SearchField id="searchField" showRefreshButton="true" tooltip="{i18n>masterSearchTooltip}" search="handleSearch" liveChange="handleSearch"
+							width="auto"></SearchField>
+						<ToolbarSpacer/>
+						<!--Button to sort the list-->
+						<Button id="sortButton" press="onOpenViewSettings" icon="sap-icon://sort" type="Transparent"/>
+					</OverflowToolbar>
+				</headerToolbar>
+				<!--To display object List Item-->
+				<items>
+					<ObjectListItem class = 'gradientitem' type="Navigation" press="handleListItemPress" title="{name}" app:Id="{}"></ObjectListItem>
+				</items>
+			</List>
+		</semantic:content>
+	</semantic:MasterPage>
+</mvc:View>

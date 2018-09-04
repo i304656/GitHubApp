@@ -1,0 +1,82 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:semantic="sap.m.semantic"
+	controllerName="GitHubGitHub.controller.Detail" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form">
+	<!--Header item -->
+	<semantic:DetailPage class = 'gradientheader' id="page" navButtonPress="onNavBack" showNavButton="{device>/system/phone}" title="{i18n>detailTitle}"
+		busy="{detailView>/busy}" busyIndicatorDelay="{detailView>/delay}">
+		<semantic:customHeaderContent></semantic:customHeaderContent>
+		<semantic:content>
+			<ObjectHeader title="{/name}">
+				<attributes>
+					<ObjectAttribute text="Id #{/id}"/>
+				</attributes>
+			</ObjectHeader>
+			<!-- Form to display the details of the selected item in the master list(Git Item details)-->
+			<VBox visible="true" id="vboxParent">
+				<f:SimpleForm  class = 'gradientform' id="SimpleFormParent" editable="true" layout="ResponsiveGridLayout" title="Additional Details" labelSpanXL="4" labelSpanL="3"
+					labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2"
+					columnsL="1" columnsM="1" singleContainerFullSize="false">
+					<f:content >
+						<Label text="Creation Date"/>
+						<Text class = 'textcolor' text="{/created_at}"/>
+						<Label text="Pushed Date"/>
+						<Text text="{/pushed_at}"/>
+						<Label text="SSH Url"/>
+						<Text text="{/ssh_url}"/>
+						<Label text="Update Date"/>
+						<Text text="{/updated_at}"/>
+						<Label text="Open Issues"/>
+						<Text text="{/open_issues}"/>
+						<Label text="Language"/>
+						<Text text="{/language}"/>
+						<Label text="Watchers"/>
+						<Text text="{/watchers}"/>
+						<Label text="Has Downloads"/>
+						<Switch type="AcceptReject" state="{/has_downloads}" enabled="false">
+							<layoutData>
+								<FlexItemData growFactor="1"/>
+							</layoutData>
+						</Switch>
+						<Label text="Has Projects"/>
+						<Switch type="AcceptReject" state="{/has_projects}" enabled="false">
+							<layoutData>
+								<FlexItemData growFactor="1"/>
+							</layoutData>
+						</Switch>
+						<Label text="Has Wiki"/>
+						<Switch type="AcceptReject" state="{/has_wiki}" enabled="false">
+							<layoutData>
+								<FlexItemData growFactor="1"/>
+							</layoutData>
+						</Switch>
+					</f:content>
+				</f:SimpleForm>
+			</VBox>
+			<!-- Form to display the details of the selected item in the master list (Container details)-->
+			<VBox id="vboxChild" visible="false">
+				<f:SimpleForm class = 'gradientform' id="SimpleFormChild" editable="true" layout="ResponsiveGridLayout" title="Additional Details" labelSpanXL="4" labelSpanL="3"
+					labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2"
+					columnsL="1" columnsM="1" singleContainerFullSize="false">
+					<f:content>
+						<Label text="Contributers"/>
+						<Text text="{/contributions}"/>
+						<Label text="Type"/>
+						<Text text="{/type}"/>
+						<Label text="Login"/>
+						<Text text="{/login}"/>
+						<Label text="Node ID"/>
+						<Text text="{/node_id}"/>
+						<Label text="URL"/>
+						<Text text="{/url}"/>
+						<Label text="Site Admin"/>
+						<Switch type="AcceptReject" state="{/site_admin}" enabled="false">
+							<layoutData>
+								<FlexItemData growFactor="1"/>
+							</layoutData>
+						</Switch>
+					</f:content>
+				</f:SimpleForm>
+			</VBox>
+		</semantic:content>
+	</semantic:DetailPage>
+</mvc:View>

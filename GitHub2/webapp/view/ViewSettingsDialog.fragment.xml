@@ -1,0 +1,11 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<!--To display dialog box of Sorting functionality-->
+	<ViewSettingsDialog sortDescending="false" selectedSortItem="full_name" id="viewSettingsDialog" confirm="onConfirmViewSettingsDialog">
+		<sortItems>
+			<ViewSettingsItem id="full_name" text="{i18n>Full_Name}" key="full_name" selected="true"/>
+			<ViewSettingsItem id="created" text="{i18n>Created}" key="created" selected="false"/>
+			<ViewSettingsItem id="updated" text="{i18n>Updated}" key="updated" selected="false"/>
+			<ViewSettingsItem id="pushed" text="{i18n>Pushed}" key="pushed" selected="false"/>
+		</sortItems>
+	</ViewSettingsDialog>
+</core:FragmentDefinition>

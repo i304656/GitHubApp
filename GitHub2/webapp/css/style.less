@@ -1,0 +1,44 @@
+
+/* Mixin */
+/*
+@@gradient is called in implementation part to give the color to the various parts of application
+*/
+
+.gradient (@origin: left, @start: #ffffff, @stop: #000000) {
+	background-color: @start;
+	background-image: -webkit-linear-gradient(@origin, @start, @stop);
+	background-image: -moz-linear-gradient(@origin, @start, @stop);
+	background-image: -o-linear-gradient(@origin, @start, @stop);
+	background-image: -ms-linear-gradient(@origin, @start, @stop);
+	background-image: linear-gradient(@origin, @start, @stop);
+}
+
+/**Implementation **/
+/*
+@Class
+Detail Form 
+*/
+.gradientform {
+	.gradient(left, #d1eff6, #e4ecee);
+} 
+/*
+@Class
+Detail Form Header
+*/
+.gradientheader{
+	.gradient(left, #b7bdbf, #eaeff0);
+}
+/*
+@Class
+Master List
+*/
+.gradientlist{
+	.gradient(left,#99b5ba,#eaeff0)
+}
+/*
+@Class
+Master Item
+*/
+.gradientitem{
+	.gradient(left,#dae7ea,#eaeff0)
+}
